@@ -74,7 +74,42 @@ let ap7 = new Vue({
     }
 })
 
-//只有 初始定义的data属性才会监听, 因为是由defineProperty实现的
-//使用Object.freeze()冻结属性,就可以禁止监听
+let app8 = new Vue({
+    el: '#app8',
+    data: {
+        attrName: 'href',
+        url: 'www.baidu.com'
+    }
+})
+
+let app9 = new Vue({
+    el: '#app9',
+    data: {
+        message: 'hello computed'
+    },
+    computed: {
+        reverseMessage: {
+            get: function() {
+                return this.message.split('').reverse().join('');
+            },
+            set: function(val) {
+                this.message = this.message + val
+            }
+        }
+        
+    }
+})
+
+let app10 = new Vue({
+    el: '#app10',
+    data: {
+        curClass: {
+            curBackgroundColor: true
+        },
+        curStyle: {
+            'font-size': '20px'
+        }
+    }
+})
 
 

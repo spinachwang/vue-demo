@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="../vue.js"> </script>
+    
 </head>
 <body>
 
@@ -61,10 +62,25 @@
     <hr>
 
     <div id="app8">
+        属性名绑定  (无效???)
+        <a :[attrName]="url">do something {{ attrName }}</a>
     </div>
     <hr>
 
+    <div id="app9">
+        {{ message }}
+        <p>computed message: {{ reverseMessage }} </p>
+    </div>
+    <hr>
+
+    <div id="app10">
+        <div :class="curClass" :style="curStyle">class bind</div>
+    </div>
+
+
 
     <script src="./index.js"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    
 </body>
 </html>
