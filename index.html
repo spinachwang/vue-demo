@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"> </script>
+</head>
+<body>
+
+    <div id="app">
+       显示数据: {{ message }} 
+    </div>
+    <hr>
+
+    <div id="app2">
+        <span :title="message">hey 数据绑定</span>
+    </div>
+    <hr>
+
+    <div id="app3">
+        <p v-if="seen">if 语句</p>
+    </div>
+    <hr>
+
+    <div id="app4">
+        for循环
+        <ol>
+            <li v-for="item in items">
+                {{ item.text }}
+            </li>
+        </ol>
+    </div>
+    <hr>
+
+    <div id="app5">
+        事件绑定
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">reverse message</button>
+    </div>
+    <hr>
+
+    <div id="app6">
+        双向绑定
+        <p>{{ message }} </p>
+        <input v-model="message" />
+    </div>
+    <hr>
+
+    <div id="app7">
+        组件化， 全局组件
+        <ol>
+            <todo-item
+                v-for="item in groceryList"
+                :todo="item"
+                :key="item.id"
+            ></todo-item>
+        </ol>
+    </div> 
+    <hr>
+
+    <div id="app8">
+    </div>
+    <hr>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
