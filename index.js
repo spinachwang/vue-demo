@@ -22,6 +22,7 @@ let app3 = new Vue({
 let app4 = new Vue({
     el: '#app4',
     data: {
+        parentMsg: 'parentMsg',
         items: [
             {
                 id: 1,
@@ -108,6 +109,27 @@ let app10 = new Vue({
         },
         curStyle: {
             'font-size': '20px'
+        }
+    }
+})
+
+let app11 = new Vue({
+    el: '#app11',
+    data: {
+        items: [
+            {id: 1, text: 'a'},
+            {id: 2, text: 'b'},
+            {id: 3, text: 'c'}
+        ]
+    },
+    methods: {
+        sortItems: function() {
+            this.items = [
+                {id: 3, text: 'c'},
+                {id: 2, text: 'b'},
+                {id: 1, text: 'a'}
+            ]
+            console.log(this.items);
         }
     }
 })

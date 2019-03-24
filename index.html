@@ -26,10 +26,10 @@
     <hr>
 
     <div id="app4">
-        for循环
+        for循环(也可以循环对象 (value, key, index))
         <ol>
-            <li v-for="item in items">
-                {{ item.text }}
+            <li v-for="(item, i) in items">
+                {{ parentMsg }}: {{ i }}:{{ item.text }}
             </li>
         </ol>
     </div>
@@ -38,7 +38,7 @@
     <div id="app5">
         事件绑定
         <p>{{ message }}</p>
-        <button v-on:click="reverseMessage">reverse message</button>
+        <button v-on:click="reverseMessage()">reverse message</button>
     </div>
     <hr>
 
@@ -75,6 +75,21 @@
 
     <div id="app10">
         <div :class="curClass" :style="curStyle">class bind</div>
+    </div>
+    <hr>
+
+    <div id="app11">
+        <ol>
+            <li v-for="item in items">
+                {{  item.text }}
+            </li>
+        </ol>
+        <button @click="sortItems">sort items</button>
+    </div>
+
+    <div onclick="alert(1)" style="width: 50px; height: 50px; background: red; position: relative">
+        <div  style="width: 50px; height: 50px; background: green; position: absolute; top: 60px; ">
+        </div>
     </div>
 
 

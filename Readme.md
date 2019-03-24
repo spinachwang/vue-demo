@@ -13,5 +13,34 @@
 5. 文档的动态参数无效,不知道为啥
 6.  计算属性是由缓存的, 有依赖的情况下，依赖的一方变化,计算属性才会执行,不想有缓存请使用方法
 7. watch是使用在数据变化需要请求ajax，或者开销较大的工作时使用
-8. vue会复用元素, 如果是独立的，需要加上key属性
+8. vue会复用元素, 复用元素的意思是dom元素不变, vue的值还是会变动的. 如果dom元素会有特殊属性，比如checkbox，点击的时候选中的是当前的checkbox元素, 如果此时添加一个checkbox，将还是会选中之前的checkbox元素，而不是跟着值走
+9. Vue的数组变异方法（会改变当前数组）, 这些方法也会触发视图更新, 如果是不会改变当前数组的方法，直接用返回的覆盖当前数组
+- push()
+- pop()
+- shift()
+- unshift()
+- splice()
+- sort()
+- reverse()
+10. Vue检测不了直接利用索引赋值和修改数组长度的数组，用下面方法代替
+- Vue.set(vm.items, 数组下标, newValue)
+- vm.$set(vm.items, 下标, newValue)
+- 修改长度, vm.items.splice(newLength)
+11. Vue同样检测不了对象的属性添加删除，用下面方法代替
+- Vue.set(vm.userProfile, 属性key, value)
+- vm.$set(vm.userProfile, 属性key, value)
+12. 如果要赋值多个新属性, 需要去创建一个新对象
+```
+vm.userProfile = Object.assign({}, vm.userProfile, {
+  age: 27,
+  favoriteColor: 'Vue Green'
+})
+```
+13. 事件的修饰符
+- .stop              阻止事件传播
+- .prevent           阻止默认事件
+- .capture           捕获阶段执行,也就是先父级执行
+- .self              只有是自己触发是才调用，冒泡传递上来的不调用
+- .once
+- .passive           阻止默认行为, prevent可能会导致卡顿（用在滚动条上）
 
