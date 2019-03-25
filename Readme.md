@@ -64,4 +64,5 @@ Vue.component('base-checkbox', {
   `
 })
 ```
+17. this.$listeners  用来访问元素传进来的事件, this.$attrs 用来访问元素传进来的props
 
