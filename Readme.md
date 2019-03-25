@@ -45,4 +45,23 @@ vm.userProfile = Object.assign({}, vm.userProfile, {
 - .passive           阻止默认行为, prevent可能会导致卡顿（用在滚动条上）
 14. 静止继承特性 inheritAttrs: false, 意思是定义组件的时候加上这个属性。当用到这个组件并且加上属性之后，组件内部不会继承到这个属性
 15. 事件名用kebab-case
+16. 利用model属性, 可以配置组件的双向绑定的prop和event
+```
+Vue.component('base-checkbox', {
+  model: {
+    prop: 'checked',
+    event: 'change'
+  },
+  props: {
+    checked: Boolean
+  },
+  template: `
+    <input
+      type="checkbox"
+      v-bind:checked="checked"
+      v-on:change="$emit('change', $event.target.checked)"
+    >
+  `
+})
+```
 
