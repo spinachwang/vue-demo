@@ -43,5 +43,5 @@ vm.userProfile = Object.assign({}, vm.userProfile, {
 - .self              只有是自己触发是才调用，冒泡传递上来的不调用
 - .once
 - .passive           阻止默认行为, prevent可能会导致卡顿（用在滚动条上）
-14. 静止继承特性 inheritAttrs: false
+14. 静止继承特性 inheritAttrs: false, 意思是定义组件的时候加上这个属性。当用到这个组件并且加上属性之后，组件内部不会继承到这个属性
 
