@@ -43,4 +43,5 @@ vm.userProfile = Object.assign({}, vm.userProfile, {
 - .self              只有是自己触发是才调用，冒泡传递上来的不调用
 - .once
 - .passive           阻止默认行为, prevent可能会导致卡顿（用在滚动条上）
+14. 静止继承特性 inheritAttrs: false
 
