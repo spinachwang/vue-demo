@@ -80,4 +80,9 @@ provide: function () {
 ```
 inject: ['getMap']
 ```
-
+23. 循环引用模块时，可以利用生命周期beforeCreate
+```
+beforeCreate: function () {
+  this.$options.components.TreeFolderContents = require('./tree-folder-contents.vue').default
+}
+```
