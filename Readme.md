@@ -66,5 +66,6 @@ Vue.component('base-checkbox', {
 ```
 17. this.$listeners  用来访问元素传进来的事件, this.$attrs 用来访问元素传进来的props
 18. 父子组件双向绑定最好用 v-bind-sync ，原理是用的事件触发，这样不会导致子组件会把父组件的值改变
-19. 插槽不鞥访问父组件的作用域。 可以绑定变量到slot上面就可以访问了
+19. 插槽不能访问父组件的作用域。 可以绑定变量到slot上面就可以访问了
+20. 创建组件时, 可以异步创建.方式是Vue.component传入一个函数function(resolove, reject)
 
