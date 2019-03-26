@@ -98,17 +98,33 @@ beforeCreate: function () {
   </transition>
 </div>
 ```
-25. Vue 动画结合第三方。 组件属性为
+26. Vue 动画结合第三方。 组件属性为
 - enter-class
 - enter-active-class
 - enter-to-class (2.1.8+)
 - leave-class
 - leave-active-class
 - leave-to-class (2.1.8+)
-26. 不结合第三方。自己定义css 用下面的类名
+27. 不结合第三方。自己定义css 用下面的类名
 - v-enter
 - v-enter-active
 - v-enter-to
 - v-leave
 - v-leave-active
 - v-leave-to
+28. 也可以使用JS钩子。来实现一些东西比如css, 如果只是CSS过度全部使用钩子实现。需要v-bind:css="false"， enter和leave需要调用done()
+```
+<transition
+  v-on:before-enter="beforeEnter"
+  v-on:enter="enter"
+  v-on:after-enter="afterEnter"
+  v-on:enter-cancelled="enterCancelled"
+
+  v-on:before-leave="beforeLeave"
+  v-on:leave="leave"
+  v-on:after-leave="afterLeave"
+  v-on:leave-cancelled="leaveCancelled"
+>
+  <!-- ... -->
+</transition>
+```
