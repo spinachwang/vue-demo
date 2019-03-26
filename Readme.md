@@ -86,3 +86,4 @@ beforeCreate: function () {
   this.$options.components.TreeFolderContents = require('./tree-folder-contents.vue').default
 }
 ```
+24.  $forceUpdate 强制更新， v-once 值渲染一次。不会绑定更新
