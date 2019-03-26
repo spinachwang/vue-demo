@@ -69,4 +69,15 @@ Vue.component('base-checkbox', {
 19. 插槽不能访问父组件的作用域。 可以绑定变量到slot上面就可以访问了
 20. 创建组件时, 可以异步创建.方式是Vue.component传入一个函数function(resolove, reject)
 21. 子组件访问父组件用$parent. 自组件访问根组件用$root. 父组件访问子组件用$refs(是渲染完成后才能使用的，不要在模板和计算属性中使用)
+22. 父组件可以提供provide来告诉子组件哪些属性可以访问。然后子组件通过inject来获得父组件共享出来的属性
+```
+provide: function () {
+  return {
+    getMap: this.getMap
+  }
+}
+```
+```
+inject: ['getMap']
+```
 
