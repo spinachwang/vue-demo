@@ -87,3 +87,28 @@ beforeCreate: function () {
 }
 ```
 24.  $forceUpdate 强制更新， v-once 值渲染一次。不会绑定更新
+25. Vue动画框架
+```
+<div id="demo">
+  <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="fade">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+```
+25. Vue 动画结合第三方。 组件属性为
+- enter-class
+- enter-active-class
+- enter-to-class (2.1.8+)
+- leave-class
+- leave-active-class
+- leave-to-class (2.1.8+)
+26. 不结合第三方。自己定义css 用下面的类名
+- v-enter
+- v-enter-active
+- v-enter-to
+- v-leave
+- v-leave-active
+- v-leave-to
